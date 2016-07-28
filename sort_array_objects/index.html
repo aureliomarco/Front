@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js sort</title>
+</head>
+<body>
+	<script>
+		var perguntasTotal = [{
+			idPergunta: 1,
+			pergunta: ") Eu sonho ser tão bom no que faço que serei constantemente consultado como um especialista.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 22,
+			pesoPergunta: 'TF'
+		}, {
+			idPergunta: 2,
+			pergunta: ") Sinto-me mais realizado quando sou capaz de integrar e gerenciar os esforços dos outros.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 40,
+			pesoPergunta: 'GG'
+		}, {
+			idPergunta: 3,
+			pergunta: ") Eu sonho em ter uma carreira que me dê a liberdade para realizar o trabalho à minha maneira e fazer meus próprios horários.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 2,
+			pesoPergunta: 'AI'
+		}, {
+			idPergunta: 4,
+			pergunta: ") Segurança e estabilidade são mais importantes para mim do que liberdade e autonomia.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 5,
+			pesoPergunta: 'SE'
+		}, {
+			idPergunta: 5,
+			pergunta: ") Eu estou sempre buscando ideias que me permitirão começar um negócio próprio.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 4,
+			pesoPergunta: 'CE'
+		}, {
+			idPergunta: 6,
+			pergunta: ") Eu me sentirei realmente bem-sucedido se eu tiver feito uma real contribuição ao bem-estar da sociedade como um todo.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 3,
+			pesoPergunta: 'SD'
+		}, {
+			idPergunta: 7,
+			pergunta: ") Eu sonho com uma carreira na qual eu possa resolver problemas ou ir além em situações que são extremamente desafiadoras.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 2,
+			pesoPergunta: 'PD'
+		}, {
+			idPergunta: 8,
+			pergunta: ") Eu preferiria deixar meu emprego agora se tivesse que assumir uma posição em que tivesse que sacrificar mais minha vida pessoal e familiar.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 1,
+			pesoPergunta: 'EV'
+		}, {
+			idPergunta: 9,
+			pergunta: ") Eu me sentirei bem-sucedido em minha carreira se eu puder desenvolver minhas habilidades técnicas num alto nível de competência.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 3,
+			pesoPergunta: 'TF'
+		}, {
+			idPergunta: 10,
+			pergunta: ") Eu sonho em ser responsável por uma organização complexa e tomar decisões que afetem muitas pessoas.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 4,
+			pesoPergunta: 'GG'
+		}, {
+			idPergunta: 11,
+			pergunta: ") Sinto-me realizado no trabalho quando tenho a liberdade de definir minhas próprias tarefas, cronogramas e procedimentos.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 5,
+			pesoPergunta: 'AI'
+		}, {
+			idPergunta: 12,
+			pergunta: ") Eu preferiria deixar meu emprego se tivesse que assumir um desafio que colocaria em risco minha segurança na organização.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 6,
+			pesoPergunta: 'SE'
+		}, {
+			idPergunta: 13,
+			pergunta: ") Construir meu próprio negócio é mais importante para mim do que atingir uma alta posição numa organização como empregado.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 1,
+			pesoPergunta: 'CE'
+		}, {
+			idPergunta: 14,
+			pergunta: ") Sinto-me realizado em minha carreira quando sou hábil em utilizar meus talentos a serviço dos outros.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 0,
+			pesoPergunta: 'SD'
+		}, {
+			idPergunta: 15,
+			pergunta: ") Eu me sentirei bem-sucedido em minha carreira se tiver que encarar e ultrapassar desafios.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 6,
+			pesoPergunta: 'PD'
+		}, {
+			idPergunta: 16,
+			pergunta: ") Eu sonho com uma carreira que me permita integrar minhas necessidades pessoais, familiares e profissionais.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 8,
+			pesoPergunta: 'EV'
+		}, {
+			idPergunta: 17,
+			pergunta: ") Tornar-me um especialista em minha área é mais atrativo do que ser um gerente geral.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 10,
+			pesoPergunta: 'TF'
+		}, {
+			idPergunta: 18,
+			pergunta: ") Eu me sentirei bem-sucedido se me tornar um gerente geral em alguma organização.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 90,
+			pesoPergunta: 'GG'
+		}, {
+			idPergunta: 19,
+			pergunta: ") Eu me sentirei bem-sucedido na carreira se conseguir completa autonomia e liberdade.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 1,
+			pesoPergunta: 'AI'
+		}, {
+			idPergunta: 20,
+			pergunta: ") Eu procuro por um trabalho dentro da organização que me ofereça segurança e estabilidade.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 2,
+			pesoPergunta: 'SE'
+		}, {
+			idPergunta: 21,
+			pergunta: ") Sinto-me realizado em meu trabalho quando consigo construir algo que é unicamente o resultado de minhas próprias ideias e de meu próprio esforço.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 5,
+			pesoPergunta: 'CE'
+		}, {
+			idPergunta: 22,
+			pergunta: ") Utilizar minhas habilidades para fazer do mundo um lugar melhor para se viver e trabalhar é mais importante do que atingir um alto cargo.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 6,
+			pesoPergunta: 'SD'
+		}, {
+			idPergunta: 23,
+			pergunta: ") Sinto-me realizado em minha carreira quando consigo resolver problemas que eram insolúveis ou solucionar situações consideradas impossíveis.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 3,
+			pesoPergunta: 'PD'
+		}, {
+			idPergunta: 24,
+			pergunta: ") Sinto-me bem-sucedido na vida apenas se consigo equilibrar minhas necessidades pessoais, familiares e de carreira.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 2,
+			pesoPergunta: 'EV'
+		}, {
+			idPergunta: 25,
+			pergunta: ") Eu preferiria deixar meu emprego a aceitar um cargo rotativo que me deixaria fora da minha área de especialidade.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 1,
+			pesoPergunta: 'TF'
+		}, {
+			idPergunta: 26,
+			pergunta: ") Tornar-me um gerente geral é mais atraente do que ser um especialista na área em que atuo.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 1,
+			pesoPergunta: 'GG'
+		}, {
+			idPergunta: 27,
+			pergunta: ") A oportunidade de realizar um trabalho do meu jeito, livre de regras e restrições, é mais importante do que ter segurança.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 2,
+			pesoPergunta: 'AI'
+		}, {
+			idPergunta: 28,
+			pergunta: ") Sinto-me realizado no trabalho quando tenho completa estabilidade financeira e na carreira.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 4,
+			pesoPergunta: 'SE'
+		}, {
+			idPergunta: 29,
+			pergunta: ") Eu me sentirei realizado em minha carreira se tiver criado ou construído algo que é inteiramente de minha autoria.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 5,
+			pesoPergunta: 'CE'
+		}, {
+			idPergunta: 30,
+			pergunta: ") Eu sonho em ter uma carreira que faça uma real contribuição para a humanidade e para a sociedade.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 6,
+			pesoPergunta: 'SD'
+		}, {
+			idPergunta: 31,
+			pergunta: ") Eu busco oportunidades de trabalho que desafiam fortemente minha capacidade de resolver problemas.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 3,
+			pesoPergunta: 'PD'
+		}, {
+			idPergunta: 32,
+			pergunta: ") Equilibrar as demandas de minha vida pessoal e profissional é mais importante do que atingir um alto cargo.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 3,
+			pesoPergunta: 'EV'
+		}, {
+			idPergunta: 33,
+			pergunta: ") Sinto-me realizado no trabalho quando sou hábil em utilizar minhas competências e talentos especiais.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 3,
+			pesoPergunta: 'TF'
+		}, {
+			idPergunta: 34,
+			pergunta: ") Eu preferiria deixar meu emprego a aceitar outra posição que me colocaria distante da trajetória à gerência geral do negócio.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 3,
+			pesoPergunta: 'GG'
+		}, {
+			idPergunta: 35,
+			pergunta: ") Eu preferiria deixar meu emprego a aceitar um trabalho que reduzisse minha autonomia e liberdade.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 2,
+			pesoPergunta: 'AI'
+		}, {
+			idPergunta: 36,
+			pergunta: ") Eu sonho em ter uma carreira que me proporcione a sensação de segurança e estabilidade.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 6,
+			pesoPergunta: 'SE'
+		}, {
+			idPergunta: 37,
+			pergunta: ") Eu sonho em iniciar e montar meu próprio negócio.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 1,
+			pesoPergunta: 'CE'
+		}, {
+			idPergunta: 38,
+			pergunta: ") Eu preferiria deixar meu emprego a aceitar um desafio que retiraria a possibilidade de servir aos outros.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 2,
+			pesoPergunta: 'SD'
+		}, {
+			idPergunta: 39,
+			pergunta: ") Trabalhar com problemas que são considerados impossíveis é mais importante do que atingir um alto cargo.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 2,
+			pesoPergunta: 'PD'
+		}, {
+			idPergunta: 40,
+			pergunta: ") Eu sempre procuro oportunidades que minimizem a interferência na minha vida pessoal e familiar.",
+			escolhas: [1, 2, 3, 4, 5, 6],
+			respostaUser: 1,
+			pesoPergunta: 'EV'
+		}];
+
+		var orderedQuestions = perguntasTotal.sort(function(a, b){ 
+			return b.respostaUser - a.respostaUser; 
+		});
+
+		console.log(orderedQuestions);
+
+		for (var i = 0; i < orderedQuestions.length; i++) {
+			var para = document.createElement("p");
+			var t = document.createTextNode("Pergunta " + orderedQuestions[i].idPergunta + ")" + " - Resposta: " + orderedQuestions[i].respostaUser);
+			para.appendChild(t);
+			document.body.appendChild(para);   
+		}
+
+	</script>
+</body>
+</html>
